@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desplegable personalizado</title>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
+    <main class="aplicacion">
+      <h1 class="titulo">Desplegable</h1>
+
+      <!-- Contenedor del desplegable: JavaScript le agrega la clase "abierto" -->
+      <div class="desplegable" id="desplegable">
+        <!-- Botón que muestra el texto de marcador o el elemento elegido -->
+        <button class="desplegable-boton" id="desplegableBoton" aria-haspopup="listbox" aria-expanded="false">
+          <span class="desplegable-texto" id="desplegableTexto">Selecciona un elemento</span>
+          <span class="desplegable-flecha"></span>
+        </button>
+
+        <!-- Lista de opciones: JavaScript la llena con los elementos -->
+        <ul class="desplegable-lista" id="desplegableLista" role="listbox"></ul>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

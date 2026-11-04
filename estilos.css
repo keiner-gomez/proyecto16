@@ -1,0 +1,115 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+}
+
+.aplicacion {
+  max-width: 320px;
+  margin: 60px auto;
+  padding: 0 16px;
+}
+
+.titulo {
+  font-size: 20px;
+  text-align: center;
+}
+
+
+.desplegable {
+  position: relative;
+}
+
+.desplegable-boton {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  font-size: 16px;
+  background: #fff;
+  border: 2px solid #333;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Texto de marcador: gris mientras no hay selección */
+.desplegable-texto {
+  color: #777;
+}
+
+/* Cuando ya se eligió algo, el texto pasa a negro */
+.desplegable.con-seleccion .desplegable-texto {
+  color: #000;
+}
+
+/* Flecha hecha con bordes (apunta hacia abajo) */
+.desplegable-flecha {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #333;
+  border-bottom: 2px solid #333;
+  transform: rotate(45deg);
+}
+
+/* Flecha hacia arriba cuando está abierto */
+.desplegable.abierto .desplegable-flecha {
+  transform: rotate(-135deg);
+}
+
+.desplegable-lista {
+  display: none; /* Oculta por defecto */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+  background: #fff;
+  border: 2px solid #333;
+  border-radius: 10px;
+  overflow: hidden; /* Respeta las esquinas redondeadas */
+}
+
+/* Se muestra solo cuando el contenedor tiene la clase "abierto" */
+.desplegable.abierto .desplegable-lista {
+  display: block;
+}
+
+.desplegable-opcion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-top: 1px solid #333;
+  cursor: pointer;
+}
+
+.desplegable-opcion:first-child {
+  border-top: none; /* La primera opción no necesita línea superior */
+}
+
+.desplegable-opcion:hover {
+  background: #eee;
+}
+
+/* Opción elegida: fondo azul claro y texto en negrita */
+.desplegable-opcion.seleccionada {
+  background: #e0ecff;
+  font-weight: bold;
+}
+
+/* Círculo con marca de verificación para la opción elegida */
+.desplegable-opcion.seleccionada::after {
+  content: "✓";
+  width: 22px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  font-size: 13px;
+  color: #fff;
+  background: #000;
+  border-radius: 50%;
+}
